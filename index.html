@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rivelin Valley Allotment Society — Roscoe Plantation, Sheffield</title>
 <meta name="description" content="Rivelin Valley Allotment Society (RVAS) is a friendly, inclusive allotment community at Roscoe Plantation in Sheffield. Membership is £5 a year per plot, with shared tools, a polytunnel, free woodchip and manure, and regular meetings and socials. Find out how to join.">
-<meta name="theme-color" content="#EAF1E4">
+<meta name="theme-color" content="#ECE6D4">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Rivelin Valley Allotment Society">
@@ -14,27 +14,30 @@
 <meta property="og:image" content="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poiret+One&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poiret+One&family=Caveat:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F3F6EE;
-    --paper-2:#EAF1E2;
-    --mist:#FBFDF8;
-    --glass:#DCE8DA;
-    --ink:#1B2C23;
-    --green:#234D39;
-    --green-deep:#163026;
-    --green-mid:#3E6B4E;
-    --muted:#5E7264;
+    --paper:#F2ECDB;
+    --paper-2:#E9E0C9;
+    --mist:#FBF6EA;
+    --glass:#DBE7D7;
+    --ink:#23301F;
+    --green:#2B5238;
+    --green-deep:#152A1A;
+    --green-mid:#3F6B49;
+    --muted:#5C6A52;
     --brass:#B08D4F;
-    --brass-deep:#876733;
-    --brass-bright:#CDA861;
-    --coral:#DD7468;
-    --rose:#D78AA4;
-    --line:rgba(35,77,57,.16);
-    --line-brass:rgba(176,141,79,.40);
+    --brass-deep:#856231;
+    --brass-bright:#D7B069;
+    --terra:#C2693F;
+    --terra-deep:#A6532E;
+    --honey:#D99A3E;
+    --sun:#FFE6AE;
+    --line:rgba(60,77,40,.16);
+    --line-brass:rgba(176,141,79,.42);
     --font-display:'Cormorant Garamond', Georgia, serif;
     --font-deco:'Poiret One', system-ui, sans-serif;
+    --font-hand:'Caveat', 'Segoe Script', cursive;
     --font-body:'Outfit', system-ui, sans-serif;
   }
 
@@ -46,32 +49,26 @@
   img{display:block;max-width:100%;}
   :target{scroll-margin-top:5rem;}
 
-  /* ---- Glasshouse atmosphere ---- */
-  .fx{position:fixed;inset:0;z-index:-4;background:
-    linear-gradient(180deg, #E7F0E6 0%, #F4F7EF 42%, #ECF2E3 100%);}
-  /* faint white glazing bars — standing inside the glasshouse */
-  .bars{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.5;
+  /* ---- Glasshouse atmosphere (warm, sunlit) ---- */
+  .fx{position:fixed;inset:0;z-index:-5;background:linear-gradient(180deg,#E6E7CF 0%,#F4EEDE 46%,#ECE3CB 100%);}
+  .sun{position:fixed;top:-26%;left:50%;transform:translateX(-50%);width:90vmax;height:64vmax;z-index:-4;
+    pointer-events:none;background:radial-gradient(closest-side, rgba(255,228,170,.6), transparent 70%);filter:blur(18px);}
+  .prism{position:fixed;left:-10%;right:-10%;top:-6%;height:58%;z-index:-3;pointer-events:none;opacity:.12;
+    filter:blur(54px);background:conic-gradient(from 200deg at 50% 0%,
+      rgba(221,116,104,.5),rgba(224,162,74,.5),rgba(120,200,150,.5),
+      rgba(150,200,240,.5),rgba(215,138,164,.5),rgba(221,116,104,.5));}
+  .bars{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.4;
+    background:repeating-linear-gradient(90deg, transparent 0 86px, rgba(255,255,255,.5) 86px 88px);}
+  .mist{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(38px);
     background:
-      repeating-linear-gradient(90deg, transparent 0 84px, rgba(255,255,255,.55) 84px 86px),
-      linear-gradient(180deg, rgba(255,255,255,.5), transparent 18%);}
-  /* drifting steam */
-  .mist{position:fixed;inset:-20%;z-index:-2;pointer-events:none;
-    background:
-      radial-gradient(34% 30% at 22% 18%, rgba(255,255,255,.75), transparent 60%),
-      radial-gradient(40% 32% at 78% 26%, rgba(255,255,255,.6), transparent 62%),
-      radial-gradient(46% 40% at 38% 82%, rgba(232,244,232,.7), transparent 64%),
-      radial-gradient(40% 34% at 82% 76%, rgba(255,255,255,.55), transparent 62%);
-    filter:blur(36px);}
-  /* light refracting through glass — a soft, slow iridescence */
-  .prism{position:fixed;left:-10%;right:-10%;top:-8%;height:60%;z-index:-1;pointer-events:none;
-    opacity:.16;filter:blur(50px);
-    background:conic-gradient(from 200deg at 50% 0%,
-      rgba(221,116,104,.5), rgba(224,162,74,.5), rgba(120,200,150,.5),
-      rgba(150,200,240,.5), rgba(215,138,164,.5), rgba(221,116,104,.5));}
+      radial-gradient(34% 30% at 20% 16%, rgba(255,252,240,.7), transparent 60%),
+      radial-gradient(40% 32% at 80% 24%, rgba(255,252,240,.55), transparent 62%),
+      radial-gradient(46% 40% at 36% 84%, rgba(238,244,228,.6), transparent 64%),
+      radial-gradient(40% 34% at 84% 78%, rgba(255,252,240,.5), transparent 62%);}
 
   /* ---- Header ---- */
   .site-head{position:sticky;top:0;z-index:100;
-    background:linear-gradient(180deg, rgba(243,246,238,.94), rgba(243,246,238,.7) 70%, transparent);
+    background:linear-gradient(180deg, rgba(242,236,219,.95), rgba(242,236,219,.7) 70%, transparent);
     backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line-brass);}
   .site-head-inner{max-width:66rem;margin:0 auto;padding:.55rem 1.25rem;
     display:flex;align-items:center;justify-content:space-between;gap:1rem;}
@@ -81,80 +78,86 @@
     box-shadow:0 1px 4px rgba(35,77,57,.15);}
   .brand .chip img{width:1.7rem;height:1.7rem;}
   .brand b{font-family:var(--font-deco);font-weight:400;font-size:1.4rem;letter-spacing:.24em;color:var(--green);}
-  .brand span{display:none;font-size:.68rem;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;}
+  .brand span{display:none;font-family:var(--font-hand);font-size:1.05rem;color:var(--muted);letter-spacing:.01em;}
   .nav{display:flex;gap:1.3rem;align-items:center;}
   .nav a{text-decoration:none;color:var(--green);font-weight:500;font-size:.8rem;
     letter-spacing:.16em;text-transform:uppercase;padding:.3rem 0;position:relative;}
   .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-1px;height:1.5px;
-    background:var(--brass);transition:right .25s ease;}
-  .nav a:hover{color:var(--brass-deep);}
+    background:var(--terra);transition:right .25s ease;}
+  .nav a:hover{color:var(--terra-deep);}
   .nav a:hover::after{right:0;}
   .nav a:focus-visible{outline:2px solid var(--brass);outline-offset:4px;}
   @media (min-width:600px){ .brand span{display:inline;} }
   @media (max-width:520px){ .nav a.nav-hide{display:none;} }
 
   /* ---- Hero ---- */
-  .hero{position:relative;padding:clamp(2.5rem,7vw,5.5rem) 1.5rem clamp(2rem,5vw,3.5rem);}
-  .hero-inner{max-width:66rem;margin:0 auto;display:flex;flex-direction:column;gap:2.2rem;
-    align-items:center;text-align:center;}
+  .hero{position:relative;overflow:hidden;display:flex;align-items:center;
+    min-height:min(88vh,52rem);padding:clamp(3rem,7vw,5rem) 1.5rem clamp(2.5rem,5vw,3.5rem);}
+  .glassroof{position:absolute;top:0;left:0;width:100%;height:clamp(9rem,26vh,16rem);z-index:0;
+    pointer-events:none;opacity:.55;
+    -webkit-mask:linear-gradient(180deg,#000 26%, transparent);mask:linear-gradient(180deg,#000 26%, transparent);}
+  .frond{position:absolute;bottom:-10px;width:clamp(8rem,20vw,17rem);height:auto;z-index:0;
+    pointer-events:none;fill:var(--green-mid);}
+  .frond-l{left:-2rem;opacity:.24;transform:rotate(7deg);}
+  .frond-r{right:-2rem;opacity:.24;transform:scaleX(-1) rotate(7deg);}
+  .hero-inner{position:relative;z-index:2;max-width:66rem;margin:0 auto;width:100%;
+    display:flex;flex-direction:column;gap:2.2rem;align-items:center;text-align:center;}
   .hero-copy{width:100%;}
 
-  /* Glasshouse emblem: brass fan-light + arched white pane + logo */
-  .emblem{position:relative;flex:none;width:clamp(10rem,32vw,14rem);aspect-ratio:1;display:grid;place-items:center;}
-  .emblem .fan{position:absolute;inset:-14%;border-radius:50%;
-    background:repeating-conic-gradient(from 0deg, rgba(176,141,79,.65) 0 .7deg, transparent .7deg 6deg);
-    -webkit-mask:radial-gradient(circle, transparent 46%, #000 48%, #000 62%, transparent 70%);
-            mask:radial-gradient(circle, transparent 46%, #000 48%, #000 62%, transparent 70%);
-    opacity:.7;}
-  .emblem .glow{position:absolute;inset:6%;border-radius:50%;
-    background:radial-gradient(circle, rgba(120,200,150,.35), transparent 68%);filter:blur(10px);}
-  .emblem .pane{position:relative;width:80%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
-    background:radial-gradient(circle at 50% 36%, #ffffff, var(--mist) 72%, #eef3e7);
-    border:2px solid var(--brass);
-    box-shadow:0 0 0 6px var(--paper), 0 0 0 7px var(--line-brass), 0 10px 26px rgba(35,77,57,.16);}
-  .emblem .pane img{width:74%;height:auto;}
+  /* Arched glasshouse window emblem */
+  .emblem{position:relative;flex:none;width:clamp(11rem,26vw,15rem);}
+  .window{position:relative;width:100%;aspect-ratio:3/4.1;border:2px solid var(--brass);
+    border-radius:999px 999px 7px 7px;overflow:hidden;display:grid;place-items:center;
+    background:linear-gradient(180deg,#FFFDF6,var(--mist) 58%,#F1ECDD);
+    box-shadow:0 0 0 6px var(--paper), 0 0 0 7px var(--line-brass), 0 16px 34px rgba(60,50,30,.20);}
+  .window .fanlight{position:absolute;top:0;left:0;right:0;height:47%;z-index:1;opacity:.75;
+    background:repeating-conic-gradient(from 270deg at 50% 100%, var(--line-brass) 0 .5deg, transparent .5deg 6.4deg);
+    -webkit-mask:radial-gradient(135% 100% at 50% 100%, #000 58%, transparent 60%);
+            mask:radial-gradient(135% 100% at 50% 100%, #000 58%, transparent 60%);}
+  .window::after{content:"";position:absolute;left:0;right:0;top:47%;height:1.5px;background:var(--line-brass);z-index:1;}
+  .window img{position:relative;z-index:2;width:60%;height:auto;margin-top:18%;}
 
-  .eyebrow{font-family:var(--font-deco);font-size:.8rem;text-transform:uppercase;letter-spacing:.28em;
-    color:var(--brass-deep);margin-bottom:1rem;}
-  .title{font-family:var(--font-display);font-weight:600;font-size:clamp(2.8rem,9vw,5.6rem);
+  .eyebrow{font-family:var(--font-hand);font-size:1.3rem;letter-spacing:.01em;
+    color:var(--terra-deep);margin-bottom:.4rem;}
+  .title{font-family:var(--font-display);font-weight:600;font-size:clamp(2.9rem,9vw,5.8rem);
     line-height:1.0;letter-spacing:.005em;color:var(--green-deep);}
   .title .l2{display:block;font-style:italic;font-weight:600;color:var(--green);}
-  .flourish{color:var(--brass);font-size:1.4rem;line-height:1;margin:.5rem 0 0;}
+  .flourish{margin:.6rem 0 0;}
+  .flourish svg{width:3.4rem;height:auto;fill:var(--terra);opacity:.9;}
   .tagline{font-family:var(--font-display);font-style:italic;font-weight:500;
-    font-size:clamp(1.3rem,3.2vw,1.7rem);color:var(--green-mid);margin-top:.6rem;
+    font-size:clamp(1.3rem,3.2vw,1.75rem);color:var(--green-mid);margin-top:.5rem;
     max-width:34rem;margin-left:auto;margin-right:auto;}
   .actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.9rem;justify-content:center;}
   .btn{display:inline-block;padding:.85rem 1.7rem;border-radius:3px;font-family:var(--font-deco);
     font-weight:400;font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;
     text-decoration:none;cursor:pointer;border:1.5px solid transparent;
     transition:transform .15s ease, box-shadow .25s ease, background .25s ease, color .2s ease;}
-  .btn-primary{background:var(--green);color:#F4F7EF;box-shadow:0 4px 14px rgba(35,77,57,.25);}
-  .btn-primary:hover{background:var(--green-deep);transform:translateY(-2px);box-shadow:0 8px 20px rgba(35,77,57,.32);}
-  .btn-ghost{background:transparent;border-color:var(--brass);color:var(--brass-deep);}
-  .btn-ghost:hover{background:var(--brass);color:#fff;transform:translateY(-2px);}
-  .btn:focus-visible{outline:2px solid var(--brass);outline-offset:4px;}
+  .btn-primary{background:var(--terra);color:#FFF6EC;box-shadow:0 4px 14px rgba(166,83,46,.3);}
+  .btn-primary:hover{background:var(--terra-deep);transform:translateY(-2px);box-shadow:0 8px 20px rgba(166,83,46,.42);}
+  .btn-ghost{background:transparent;border-color:var(--green);color:var(--green);}
+  .btn-ghost:hover{background:var(--green);color:#fff;transform:translateY(-2px);}
+  .btn:focus-visible{outline:2px solid var(--terra);outline-offset:4px;}
 
   @media (min-width:860px){
-    .hero-inner{flex-direction:row-reverse;justify-content:space-between;text-align:left;gap:2.5rem;}
+    .hero-inner{flex-direction:row-reverse;justify-content:space-between;text-align:left;gap:3rem;}
     .hero-copy{flex:1;}
     .tagline{margin-left:0;}
     .actions{justify-content:flex-start;}
     .flourish{text-align:left;}
-    .emblem{width:clamp(12rem,22vw,16rem);}
+    .emblem{width:clamp(13rem,23vw,17rem);}
   }
 
   /* ---- Botanical divider ---- */
-  .divider{display:flex;align-items:center;gap:1rem;max-width:60rem;margin:0 auto;
+  .divider{display:flex;align-items:center;gap:1.1rem;max-width:60rem;margin:0 auto;
     padding:clamp(2rem,5vw,3rem) 1.5rem 0;}
   .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line-brass);}
-  .divider i{flex:none;color:var(--brass);font-size:1.5rem;line-height:1;font-style:normal;
-    transform:translateY(-1px);}
+  .divider svg{flex:none;width:2.4rem;height:auto;fill:var(--green-mid);opacity:.8;}
 
   /* ---- Sections ---- */
   .section{max-width:60rem;margin:0 auto;padding:clamp(2rem,5vw,3rem) 1.5rem 0;}
   .head-wrap{text-align:center;margin-bottom:1.5rem;}
-  .kicker{font-family:var(--font-deco);font-size:.76rem;text-transform:uppercase;letter-spacing:.26em;
-    color:var(--brass-deep);margin-bottom:.5rem;}
+  .kicker{font-family:var(--font-hand);font-size:1.45rem;letter-spacing:.01em;
+    color:var(--terra-deep);margin-bottom:.1rem;}
   .section-head{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,6vw,3rem);
     line-height:1.08;color:var(--green-deep);}
   .section-head em{font-style:italic;color:var(--green-mid);}
@@ -166,22 +169,21 @@
   .prose p + p{margin-top:1rem;}
   .center{text-align:center;}
 
-  /* ---- Photo band: arched glasshouse windows ---- */
-  .band{max-width:74rem;margin:clamp(2rem,5vw,3rem) auto 0;padding:0 1rem;
+  /* ---- Photo band: arched glasshouse windows with hand-written labels ---- */
+  .band{max-width:76rem;margin:clamp(2rem,5vw,3rem) auto 0;padding:0 1rem;
     display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
   .band figure{position:relative;overflow:hidden;border-radius:999px 999px 5px 5px;
-    border:1px solid var(--brass);padding:5px;background:
-      linear-gradient(180deg, var(--mist), #eef3e7);
-    box-shadow:0 8px 22px rgba(35,77,57,.16);transition:transform .3s ease, box-shadow .3s ease;}
+    border:1px solid var(--brass);padding:5px;background:linear-gradient(180deg, var(--mist), #F1ECDD);
+    box-shadow:0 8px 22px rgba(60,50,30,.16);transition:transform .3s ease, box-shadow .3s ease;}
   .band .frame{position:relative;overflow:hidden;border-radius:999px 999px 3px 3px;height:100%;}
   .band img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;
-    filter:saturate(1.06);transition:transform .5s ease;}
+    filter:saturate(1.08);transition:transform .5s ease;}
   .band .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(120deg, rgba(255,255,255,.4), transparent 38%);}
+    background:linear-gradient(120deg, rgba(255,255,255,.42), transparent 38%);}
   .band figcaption{position:absolute;left:0;right:0;bottom:0;text-align:center;
-    font-family:var(--font-display);font-style:italic;font-size:1rem;color:#fff;
-    padding:1.6rem .5rem .5rem;background:linear-gradient(to top, rgba(22,48,38,.82), transparent);}
-  .band figure:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(35,77,57,.26);}
+    font-family:var(--font-hand);font-size:1.4rem;color:#fff;
+    padding:1.7rem .5rem .3rem;background:linear-gradient(to top, rgba(21,42,26,.85), transparent);}
+  .band figure:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(60,50,30,.26);}
   .band figure:hover img{transform:scale(1.06);}
   @media (min-width:620px){ .band{grid-template-columns:repeat(3,1fr);} }
   @media (min-width:940px){ .band{grid-template-columns:repeat(6,1fr);gap:.8rem;} }
@@ -192,51 +194,46 @@
     padding:1.5rem 1.4rem 1.3rem;overflow:hidden;
     transition:transform .2s ease, box-shadow .3s ease, border-color .3s ease;}
   .card::before{content:"";position:absolute;top:0;left:1.4rem;right:1.4rem;height:2px;
-    background:linear-gradient(90deg,var(--brass),transparent);}
-  .card h3{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--green-deep);
-    margin-bottom:.3rem;}
+    background:linear-gradient(90deg,var(--honey),var(--terra),transparent);}
+  .card h3{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--green-deep);margin-bottom:.3rem;}
   .card p{color:var(--muted);font-size:.97rem;}
-  .card:hover{transform:translateY(-4px);border-color:var(--line-brass);
-    box-shadow:0 14px 28px rgba(35,77,57,.14);}
+  .card:hover{transform:translateY(-4px);border-color:var(--line-brass);box-shadow:0 14px 28px rgba(60,50,30,.14);}
   @media (min-width:600px){ .cards{grid-template-columns:1fr 1fr;} }
   @media (min-width:900px){ .cards{grid-template-columns:1fr 1fr 1fr;} }
 
   /* ---- Join ---- */
   .join-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1.8rem;}
   .join-cost{position:relative;border-radius:6px;padding:2rem 1.5rem;text-align:center;
-    background:radial-gradient(circle at 50% 32%, #fff, var(--mist) 70%, #eef3e7);
-    border:1px solid var(--brass);box-shadow:0 8px 22px rgba(35,77,57,.12);
+    background:radial-gradient(circle at 50% 32%, #FFFDF6, var(--mist) 70%, #F1ECDD);
+    border:1px solid var(--terra);box-shadow:0 8px 22px rgba(60,50,30,.12);
     display:flex;flex-direction:column;justify-content:center;align-items:center;}
   .join-cost .fig{font-family:var(--font-display);font-weight:600;line-height:1;
     font-size:clamp(3.6rem,13vw,5rem);color:var(--green-deep);}
-  .join-cost .fig small{display:block;font-family:var(--font-deco);font-size:.8rem;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--brass-deep);margin-top:.7rem;}
-  .join-cost p{margin-top:.9rem;color:var(--muted);font-size:.96rem;max-width:18rem;}
+  .join-cost .fig small{display:block;font-family:var(--font-hand);font-size:1.5rem;letter-spacing:0;
+    color:var(--terra-deep);margin-top:.3rem;}
+  .join-cost p{margin-top:.8rem;color:var(--muted);font-size:.96rem;max-width:18rem;}
   .join-how{background:var(--mist);border:1px solid var(--line);border-radius:6px;padding:1.6rem;}
-  .join-how h3{font-family:var(--font-display);font-weight:600;font-size:1.6rem;color:var(--green-deep);
-    margin-bottom:.8rem;}
+  .join-how h3{font-family:var(--font-display);font-weight:600;font-size:1.6rem;color:var(--green-deep);margin-bottom:.8rem;}
   .steps{counter-reset:step;}
   .steps li{position:relative;padding:.55rem 0 .55rem 2.7rem;border-bottom:1px solid var(--line);color:var(--ink);}
   .steps li:last-child{border-bottom:none;}
   .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:.5rem;
-    width:1.85rem;height:1.85rem;border-radius:50%;background:transparent;border:1.5px solid var(--brass);
-    color:var(--brass-deep);font-family:var(--font-display);font-weight:600;font-size:1.05rem;
+    width:1.85rem;height:1.85rem;border-radius:50%;background:transparent;border:1.5px solid var(--terra);
+    color:var(--terra-deep);font-family:var(--font-display);font-weight:600;font-size:1.05rem;
     display:flex;align-items:center;justify-content:center;}
   .pay{margin-top:1.1rem;font-size:.92rem;color:var(--muted);line-height:1.7;}
   .pay b{color:var(--green);font-weight:600;}
-  a.link{color:var(--brass-deep);text-decoration:none;border-bottom:1px solid var(--line-brass);padding-bottom:1px;
-    transition:color .2s;}
+  a.link{color:var(--terra-deep);text-decoration:none;border-bottom:1px solid rgba(194,105,63,.4);padding-bottom:1px;transition:color .2s;}
   a.link:hover{color:var(--green);}
-  a.link:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+  a.link:focus-visible{outline:2px solid var(--terra);outline-offset:3px;}
   @media (min-width:760px){ .join-grid{grid-template-columns:.85fr 1.15fr;} }
 
   /* ---- What's on ---- */
   .calendar{margin-top:1.8rem;max-width:50rem;margin-left:auto;margin-right:auto;}
-  .cal-row{display:flex;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--line);
-    align-items:baseline;flex-wrap:wrap;}
+  .cal-row{display:flex;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline;flex-wrap:wrap;}
   .cal-row:first-child{border-top:1px solid var(--line);}
-  .cal-when{font-family:var(--font-deco);font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;
-    color:var(--brass-deep);min-width:8.5rem;}
+  .cal-when{font-family:var(--font-hand);font-size:1.25rem;letter-spacing:.01em;
+    color:var(--terra-deep);min-width:8.5rem;}
   .cal-what b{font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--green-deep);}
   .cal-what span{color:var(--muted);}
   .cal-note{margin-top:1.2rem;font-size:.92rem;color:var(--muted);text-align:center;}
@@ -245,44 +242,42 @@
   .contact-details{margin-top:1.6rem;max-width:40rem;margin-left:auto;margin-right:auto;}
   .contact-row{display:flex;gap:1.5rem;padding:.95rem 0;border-bottom:1px solid var(--line);align-items:baseline;}
   .contact-row:first-child{border-top:1px solid var(--line);}
-  .contact-row dt{font-family:var(--font-deco);font-size:.74rem;text-transform:uppercase;letter-spacing:.16em;
-    color:var(--brass-deep);min-width:6rem;}
+  .contact-row dt{font-family:var(--font-hand);font-size:1.2rem;letter-spacing:.01em;color:var(--terra-deep);min-width:6rem;}
   .contact-row dd{font-size:1.05rem;}
 
   .enquiry{margin:2rem auto 0;max-width:44rem;background:var(--mist);
-    border:1px solid var(--brass);border-radius:6px;padding:clamp(1.5rem,4vw,2.2rem);
-    box-shadow:0 8px 24px rgba(35,77,57,.12);}
+    border:1px solid var(--brass);border-radius:6px;padding:clamp(1.5rem,4vw,2.2rem);box-shadow:0 8px 24px rgba(60,50,30,.12);}
   .enquiry-head{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,5vw,2.1rem);
     color:var(--green-deep);text-align:center;}
   .enquiry-sub{color:var(--muted);margin:.4rem 0 1.5rem;text-align:center;}
   .form-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
   .field{display:flex;flex-direction:column;gap:.45rem;}
-  .field label{font-family:var(--font-deco);font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;
-    color:var(--brass-deep);}
+  .field label{font-family:var(--font-hand);font-size:1.15rem;letter-spacing:.01em;color:var(--terra-deep);}
   .field input,.field textarea{font-family:var(--font-body);font-size:1rem;color:var(--ink);
-    background:#fff;border:1px solid var(--line);border-radius:3px;padding:.75rem .85rem;width:100%;}
-  .field input::placeholder,.field textarea::placeholder{color:#9aa89d;}
+    background:#FFFDF6;border:1px solid var(--line);border-radius:3px;padding:.75rem .85rem;width:100%;}
+  .field input::placeholder,.field textarea::placeholder{color:#9aa491;}
   .field textarea{min-height:7rem;resize:vertical;}
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--green-mid);
-    box-shadow:0 0 0 3px rgba(62,107,78,.16);}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(57,103,74,.16);}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
   .form-actions{text-align:center;}
   @media (min-width:560px){ .form-grid{grid-template-columns:1fr 1fr;} .field-full{grid-column:1 / -1;} }
 
-  /* ---- Footer ---- */
-  .footer{max-width:60rem;margin:clamp(2.5rem,6vw,4rem) auto 0;padding:1.8rem 1.5rem 3rem;
-    border-top:1px solid var(--line-brass);text-align:center;color:var(--muted);font-size:.9rem;}
-  .footer .mark{font-family:var(--font-deco);letter-spacing:.3em;text-transform:uppercase;
-    color:var(--green);font-size:1.15rem;margin-bottom:.4rem;}
-  .footer .sprig{color:var(--brass);font-size:1.2rem;margin-bottom:.4rem;}
-  .footer a{color:var(--brass-deep);text-decoration:none;}
-  .footer a:hover{color:var(--green);}
+  /* ---- Footer: planted green band ---- */
+  .footer{position:relative;margin-top:clamp(3rem,7vw,4.5rem);padding:3rem 1.5rem 3.2rem;
+    background:var(--green-deep);color:#d3e0cf;text-align:center;}
+  .hedge{position:absolute;top:0;left:0;width:100%;height:34px;transform:translateY(-99%);
+    fill:var(--green-deep);display:block;}
+  .footer .sprig{width:2.6rem;height:auto;fill:var(--brass-bright);opacity:.9;margin:0 auto .4rem;}
+  .footer .mark{font-family:var(--font-deco);letter-spacing:.32em;text-transform:uppercase;color:#fff;
+    font-size:1.2rem;margin-bottom:.3rem;}
+  .footer p.line{color:#bcd0bb;font-size:.92rem;}
+  .footer a{color:var(--brass-bright);text-decoration:none;}
+  .footer a:hover{color:#fff;}
 
   /* ---- Motion ---- */
   @media (prefers-reduced-motion: no-preference){
     .mist{animation:drift 26s ease-in-out infinite alternate;}
-    .prism{animation:shimmer 30s linear infinite;}
-    .emblem .glow{animation:breathe 7s ease-in-out infinite;}
+    .prism{animation:shimmer 32s linear infinite;}
     .hero-copy > *{opacity:0;animation:rise .7s ease forwards;}
     .eyebrow{animation-delay:.05s;}
     .title{animation-delay:.12s;}
@@ -290,18 +285,55 @@
     .tagline{animation-delay:.28s;}
     .actions{animation-delay:.38s;}
     .emblem{opacity:0;animation:rise .8s ease forwards;animation-delay:.06s;}
+    .frond-l{animation:sway 9s ease-in-out infinite alternate;transform-origin:bottom left;}
+    .frond-r{animation:sway 9s ease-in-out infinite alternate-reverse;transform-origin:bottom right;}
   }
   @keyframes drift{from{transform:translate3d(0,0,0) scale(1);}to{transform:translate3d(2%,-2%,0) scale(1.08);}}
-  @keyframes shimmer{to{filter:blur(50px) hue-rotate(360deg);}}
-  @keyframes breathe{0%,100%{opacity:.5;}50%{opacity:1;}}
+  @keyframes shimmer{to{filter:blur(54px) hue-rotate(360deg);}}
+  @keyframes sway{from{transform:scaleX(var(--sx,1)) rotate(5deg);}to{transform:scaleX(var(--sx,1)) rotate(9deg);}}
   @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .frond-r{--sx:-1;}
 </style>
 </head>
 <body>
+  <!-- Reusable botanical + structural shapes -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <path id="leaf" d="M0 0 C7 -11 7 -35 0 -47 C-7 -35 -7 -11 0 0 Z"/>
+    <g id="sprig">
+      <use href="#leaf" transform="rotate(-52)"/>
+      <use href="#leaf" transform="rotate(-26)"/>
+      <use href="#leaf" transform="rotate(0)"/>
+      <use href="#leaf" transform="rotate(26)"/>
+      <use href="#leaf" transform="rotate(52)"/>
+    </g>
+    <g id="frondart">
+      <use href="#leaf" transform="rotate(-66) scale(1.05)"/>
+      <use href="#leaf" transform="rotate(-44) scale(1.15)"/>
+      <use href="#leaf" transform="rotate(-22) scale(1.2)"/>
+      <use href="#leaf" transform="rotate(0) scale(1.25)"/>
+      <use href="#leaf" transform="rotate(22) scale(1.2)"/>
+      <use href="#leaf" transform="rotate(44) scale(1.15)"/>
+      <use href="#leaf" transform="rotate(66) scale(1.05)"/>
+    </g>
+    <pattern id="arch" width="200" height="240" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.4">
+        <path d="M0 160 A100 100 0 0 1 200 160"/>
+        <path d="M20 160 A80 80 0 0 1 180 160"/>
+        <path d="M100 60 L100 240"/>
+        <path d="M0 160 L0 240"/>
+        <path d="M0 160 L200 160"/>
+        <path d="M40 160 L100 80"/>
+        <path d="M160 160 L100 80"/>
+        <path d="M0 54 L200 54"/>
+      </g>
+    </pattern>
+  </defs></svg>
+
   <div class="fx" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="prism" aria-hidden="true"></div>
   <div class="bars" aria-hidden="true"></div>
   <div class="mist" aria-hidden="true"></div>
-  <div class="prism" aria-hidden="true"></div>
 
   <header class="site-head">
     <div class="site-head-inner">
@@ -320,16 +352,22 @@
 
   <a id="top"></a>
   <header class="hero">
+    <svg class="glassroof" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+      <rect x="0" y="0" width="1200" height="240" fill="url(#arch)"/>
+    </svg>
+    <svg class="frond frond-l" viewBox="-66 -64 132 70" aria-hidden="true"><use href="#frondart"/></svg>
+    <svg class="frond frond-r" viewBox="-66 -64 132 70" aria-hidden="true"><use href="#frondart"/></svg>
     <div class="hero-inner">
       <div class="emblem">
-        <div class="fan" aria-hidden="true"></div>
-        <div class="glow" aria-hidden="true"></div>
-        <div class="pane"><img src="logo.png" width="417" height="417" alt="Rivelin Valley Allotment Society logo" decoding="async"></div>
+        <div class="window">
+          <div class="fanlight" aria-hidden="true"></div>
+          <img src="logo.png" width="417" height="417" alt="Rivelin Valley Allotment Society logo" decoding="async">
+        </div>
       </div>
       <div class="hero-copy">
         <p class="eyebrow">Roscoe Plantation · Rivelin Valley · Sheffield</p>
         <h1 class="title">Rivelin Valley <span class="l2">Allotment Society</span></h1>
-        <p class="flourish" aria-hidden="true">&#10047;</p>
+        <p class="flourish" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></p>
         <p class="tagline">Building a community in the valley to promote gardening.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#join">How to join</a>
@@ -340,7 +378,7 @@
   </header>
 
   <main id="main">
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="about" aria-label="About the society">
       <div class="head-wrap">
@@ -361,10 +399,16 @@
         <figure><div class="frame"><img src="img/delphinium.jpg" alt="Blue delphinium spires" loading="lazy"></div><figcaption>Delphinium</figcaption></figure>
         <figure><div class="frame"><img src="img/echinacea.jpg" alt="Pink echinacea coneflower" loading="lazy"></div><figcaption>Echinacea</figcaption></figure>
         <figure><div class="frame"><img src="img/romanesco.jpg" alt="Romanesco cauliflower" loading="lazy"></div><figcaption>Romanesco</figcaption></figure>
+        <figure><div class="frame"><img src="img/calendula.jpg" alt="Lemon calendula flowers" loading="lazy"></div><figcaption>Calendula</figcaption></figure>
+        <figure><div class="frame"><img src="img/nasturtium.jpg" alt="Orange nasturtium flower" loading="lazy"></div><figcaption>Nasturtium</figcaption></figure>
+        <figure><div class="frame"><img src="img/foxglove.jpg" alt="Spotted foxglove spires" loading="lazy"></div><figcaption>Foxglove</figcaption></figure>
+        <figure><div class="frame"><img src="img/lupins.jpg" alt="Lupin flower spikes" loading="lazy"></div><figcaption>Lupins</figcaption></figure>
+        <figure><div class="frame"><img src="img/geum.jpg" alt="Orange-red geum flowers" loading="lazy"></div><figcaption>Geum</figcaption></figure>
+        <figure><div class="frame"><img src="img/coreopsis.jpg" alt="Golden coreopsis flowers" loading="lazy"></div><figcaption>Coreopsis</figcaption></figure>
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="join" aria-label="Membership">
       <div class="head-wrap">
@@ -384,7 +428,7 @@
 
       <div class="join-grid">
         <div class="join-cost">
-          <p class="fig">£5<small>/ year per plot</small></p>
+          <p class="fig">£5<small>just £5 a year, per plot</small></p>
           <p>That is the whole membership fee. It covers your place in the society and everything listed above.</p>
         </div>
         <div class="join-how">
@@ -399,7 +443,7 @@
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="whats-on" aria-label="What's on through the year">
       <div class="head-wrap">
@@ -418,7 +462,7 @@
       <p class="cal-note">Members get the full calendar with confirmed dates. <a class="link" href="#contact">Get in touch</a> to be added to the list.</p>
     </section>
 
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="plant-sale" aria-label="Plant sale">
       <div class="head-wrap">
@@ -431,7 +475,7 @@
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="vision" aria-label="Our plot and plans">
       <div class="head-wrap">
@@ -444,7 +488,7 @@
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true"><i>&#10047;</i></div>
+    <div class="divider" aria-hidden="true"><svg viewBox="-50 -52 100 56"><use href="#sprig"/></svg></div>
 
     <section class="section" id="contact" aria-label="Contact">
       <div class="head-wrap">
@@ -487,9 +531,12 @@
   </main>
 
   <footer class="footer">
-    <p class="sprig" aria-hidden="true">&#10047;</p>
+    <svg class="hedge" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 14 Q 5 0 10 14 Q 15 2 20 14 Q 25 0 30 14 Q 35 2 40 14 Q 45 0 50 14 Q 55 2 60 14 Q 65 0 70 14 Q 75 2 80 14 Q 85 0 90 14 Q 95 2 100 14 Q 105 0 110 14 Q 115 2 120 14 Z"/>
+    </svg>
+    <svg class="sprig" viewBox="-50 -52 100 56" aria-hidden="true"><use href="#sprig"/></svg>
     <p class="mark">RVAS</p>
-    <p>Rivelin Valley Allotment Society · Roscoe Plantation, Sheffield · <a href="mailto:rvascontact@gmail.com">rvascontact@gmail.com</a></p>
+    <p class="line">Rivelin Valley Allotment Society · Roscoe Plantation, Sheffield · <a href="mailto:rvascontact@gmail.com">rvascontact@gmail.com</a></p>
   </footer>
 </body>
 </html>
