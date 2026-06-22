@@ -70,8 +70,8 @@
   .shafts{position:fixed;inset:0;z-index:-6;pointer-events:none;opacity:.08;mix-blend-mode:screen;
     background:linear-gradient(108deg, transparent 38%, rgba(220,238,205,.8) 46%, transparent 53%),
                linear-gradient(96deg, transparent 62%, rgba(210,232,235,.7) 68%, transparent 73%);}
-  .scrim{position:fixed;inset:0;z-index:-5;pointer-events:none;
-    background:radial-gradient(76% 64% at 50% 42%, rgba(4,14,10,.66), rgba(4,14,10,.2) 70%, transparent 86%);}
+  .scrim{position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background:linear-gradient(90deg, transparent 0%, rgba(4,12,8,.5) 9%, rgba(4,12,8,.8) 25%, rgba(4,12,8,.8) 75%, rgba(4,12,8,.5) 91%, transparent 100%);}
   .thicket{position:fixed;z-index:-4;pointer-events:none;width:clamp(15rem,34vw,30rem);height:auto;
     filter:drop-shadow(0 0 14px rgba(0,0,0,.55));}
   .th-bl{bottom:-2rem;left:-3rem;}
@@ -79,7 +79,7 @@
   .th-tl{top:-3rem;left:-3rem;transform:scaleY(-1);}
   .th-tr{top:-3rem;right:-3rem;transform:scale(-1,-1);}
   @media (max-width:760px){ .thicket{width:62vw;} }
-  .motes{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;}
+  .motes{position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;}
   .motes span{position:absolute;border-radius:50%;opacity:0;}
   .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
     background-image:radial-gradient(rgba(255,255,255,.8) .5px, transparent .6px);background-size:3px 3px;}
@@ -160,10 +160,10 @@
   .section-head{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,5.5vw,3rem);
     line-height:1.1;color:var(--gold);text-shadow:0 2px 22px rgba(0,0,0,.5);}
   .section-head em{font-style:italic;color:var(--ink);}
-  .lead{font-size:clamp(1.1rem,2.5vw,1.28rem);color:var(--ink);max-width:46rem;margin:0 auto;}
+  .lead{font-size:clamp(1.1rem,2.5vw,1.28rem);color:var(--ink);max-width:46rem;margin:0 auto;text-shadow:0 1px 8px rgba(0,0,0,.6);}
   .prose{max-width:46rem;margin:0 auto;}
   .prose .lead{margin-bottom:1rem;}
-  .prose p{color:var(--ink-soft);}
+  .prose p{color:var(--ink-soft);text-shadow:0 1px 7px rgba(0,0,0,.55);}
   .prose p + p{margin-top:1rem;}
   .center{text-align:center;}
 
