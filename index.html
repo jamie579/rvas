@@ -93,8 +93,8 @@
     display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap;}
   .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--gold);}
   .brand .chip{width:2.4rem;height:2.4rem;border-radius:50%;flex:none;
-    background:radial-gradient(circle at 50% 40%,#1a3a2c,#0a1f17);border:1px solid var(--gold-deep);
-    display:grid;place-items:center;box-shadow:0 0 14px rgba(227,194,119,.25);}
+    background:radial-gradient(circle at 50% 38%,#FCF7EC,#EFE2C4);border:1px solid var(--gold-deep);
+    display:grid;place-items:center;box-shadow:0 0 12px rgba(227,194,119,.3);}
   .brand .chip img{width:1.7rem;height:1.7rem;}
   .brand b{font-family:var(--font-display);font-weight:600;font-size:1.3rem;letter-spacing:.06em;}
   .brand span{display:none;font-size:.72rem;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft);}
@@ -113,14 +113,12 @@
   .hero-inner{position:relative;z-index:2;max-width:64rem;margin:0 auto;width:100%;
     display:flex;flex-direction:column;gap:2.2rem;align-items:center;text-align:center;}
   .emblem{position:relative;flex:none;width:clamp(11rem,26vw,15rem);aspect-ratio:1;display:grid;place-items:center;}
-  .emblem .halo{position:absolute;inset:-10%;border-radius:50%;z-index:0;filter:blur(14px);opacity:.65;
+  .emblem .halo{position:absolute;inset:-14%;border-radius:50%;z-index:0;filter:blur(18px);opacity:.62;
     background:conic-gradient(from 0deg, var(--emerald), var(--sapphire), var(--amethyst), var(--garnet), var(--gold), var(--emerald));}
-  .emblem .ring{position:absolute;inset:2%;border-radius:50%;z-index:1;border:1px solid var(--gold);
-    box-shadow:0 0 26px rgba(227,194,119,.4), inset 0 0 30px rgba(0,0,0,.6);}
-  .emblem .disc{position:relative;z-index:2;width:78%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
-    background:radial-gradient(circle at 50% 38%, #204734, #0c2418 70%, #071710);
-    box-shadow:inset 0 0 26px rgba(0,0,0,.6);}
-  .emblem .disc img{width:66%;height:auto;filter:drop-shadow(0 0 10px rgba(63,199,154,.5)) brightness(1.25);}
+  .emblem .disc{position:relative;z-index:2;width:82%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+    background:radial-gradient(circle at 50% 36%, #FCF7EC, #F2E8D0 76%, #E7D8B6);border:1px solid rgba(227,194,119,.75);
+    box-shadow:0 0 34px rgba(227,194,119,.4), 0 12px 32px rgba(0,0,0,.55), inset 0 0 16px rgba(120,90,40,.07);}
+  .emblem .disc img{width:86%;height:auto;}
   .eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.32em;color:var(--emerald);margin-bottom:1rem;}
   .title{font-family:var(--font-display);font-weight:500;font-size:clamp(2.7rem,8vw,5.4rem);
     line-height:1.0;letter-spacing:.01em;color:var(--ink);text-shadow:0 2px 30px rgba(0,0,0,.6);}
@@ -378,7 +376,6 @@
     <div class="hero-inner">
       <div class="emblem">
         <div class="halo" aria-hidden="true"></div>
-        <div class="ring" aria-hidden="true"></div>
         <div class="disc"><img src="logo.png" width="417" height="417" alt="Rivelin Valley Allotment Society logo" decoding="async"></div>
       </div>
       <div class="hero-copy">
